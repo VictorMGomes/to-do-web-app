@@ -7,11 +7,18 @@ color: #fff;
 }
 header{
     background-color: rgb(98 54 134);
-    height: 100px;
-    display: flex;
+    height: auto;
+    display: flexbox;
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px 0;
+}
+header p{
+    padding-top: 5px;    
+}
+header a{
+    color: #7fce60;
 }
 #box-content{
     background-color: rgba(78, 6, 136, 0.493);
@@ -21,6 +28,7 @@ header{
     padding: 10px 0;
     border-radius: 0 0 25px 25px;
     text-align: center;
+   /* border: solid 2px rgb(98 54 134); */
 }
 #add-content{    
     height: auto;
@@ -48,7 +56,7 @@ header{
     border: solid 2px rgba(0, 0, 0, 0.726);  
 }
 #add-content button:hover{
-    background-color: rgba(0, 0, 0, 0.726);
+    background-color: #7fce60;
     cursor: pointer;
     color: #fff;
 }
@@ -66,8 +74,13 @@ header{
     background-color: #fff;
     border: solid 2px rgba(0, 0, 0, 0.726);  
 }
-#list-content button:hover{
-    background-color: rgba(0, 0, 0, 0.726);
+#list-content #edit-btn:hover{
+    background-color: rgb(224, 224, 10);
+    cursor: pointer;
+    color: #fff;
+}
+#list-content #del-btn:hover{
+    background-color: rgb(185, 0, 0);
     cursor: pointer;
     color: #fff;
 }
