@@ -7,16 +7,43 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/scripts.js" defer></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <title>To do</title>
 </head>
 <body>
     <header>
         <h1>To do WEB Application</h1>
     </header>
-    <main>
-        <div>
-            <input type="text" name="add-task" id="add-task">
-            <button></button>
+    <div id="box-content">
+        <div id="add-content" class="add-content">
+            <input type="text" name="add-task" id="add-task" placeholder="Something to do?">
+            <button><i class="fas fa-plus"></i></button>
         </div>
-    </main>
+        <div id="list-content">
+            <ul>
+                <div class="task-item">
+                    <li>Criar o HTML.</li>
+                    <div>
+                        <button><i class="far fa-edit"></i></button>
+                        <button><i class="fas fa-trash"></i></button>
+                    </div>                       
+                </div> 
+                <div class="task-item">
+                    <li>Estilizar o HTML com CSS...</li>
+                    <div>
+                        <button><i class="far fa-edit"></i></button>
+                        <button><i class="fas fa-trash"></i></button>
+                    </div>                       
+                </div>  
+                <div class="task-item">
+                    <li>Criar e aplicar o JS!</li>
+                    <div>
+                        <button><i class="far fa-edit"></i></button>
+                        <button><i class="fas fa-trash"></i></button>
+                    </div>                       
+                </div>    
+            </ul>
+        </div>
+    </div>
 </html>
