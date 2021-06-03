@@ -48,7 +48,7 @@ body{
         text-align: center;
     }
     .group-btn{
-        width: auto;
+        width: 100px;
     }
     #add-content button{
         height: 40px;
@@ -96,4 +96,8 @@ body{
         align-items: center;
         margin: 10px auto;
         padding: 10px;
+    }
+    .task-item li{
+        width: 80%;
+        text-align: left;
     }
