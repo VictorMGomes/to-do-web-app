@@ -47,6 +47,9 @@ body{
         border: solid 2px rgba(0, 0, 0, 0.726);
         text-align: center;
     }
+    .group-btn{
+        width: auto;
+    }
     #add-content button{
         height: 40px;
         width: 40px;
