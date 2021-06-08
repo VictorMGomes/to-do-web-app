@@ -42,10 +42,12 @@ body{
         height: 40px;
         width: 50%;
         font-size: large;
-        border-radius: 10px;
         background-color: #fff;
         border: solid 2px rgba(0, 0, 0, 0.726);
         text-align: center;
+    }
+    #add-content input:focus{
+        border: solid 1px #7fce60;  
     }
     .group-btn{
         width: 100px;
@@ -96,6 +98,10 @@ body{
         align-items: center;
         margin: 10px auto;
         padding: 10px;
+    }
+    .task-item:hover{
+        background-color: #7fce60;
+        border: solid 1px black;    
     }
     .task-item li{
         width: 80%;
