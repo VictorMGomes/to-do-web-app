@@ -1,6 +1,6 @@
 # To do WEB Application
 ## A to do WEB Application made with vanilla JS, HTML and CSS.
-## No reaload page nedded.(save requests and responses from gateway or server)
+    No reaload page nedded.(save requests and responses from gateway or server)
 
 # Next steps:
 ## Step 1: ADD JS Event Listeners and functions to:
