@@ -4,6 +4,8 @@
 
 # Next steps:
 ## Step 1: ADD JS Event Listeners and functions to:
+    1.1: Add action to ADD a new task. 
+        Status: DONE.
     1.1: Check the task by click and hold.
     1.1: Remove the task by button.
     1.2: Edit the task(PopUP Modal) by button.
