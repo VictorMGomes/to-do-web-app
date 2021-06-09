@@ -7,11 +7,11 @@ let taskList = document.querySelector("#task-list");
   function setNewTask() {
     if (!inputNewTask.value == "") {
       let taskItem= document.createElement('div');
-      taskItem.innerHTML=`<div class="task-item" title="Click and hold to check">
+      taskItem.innerHTML=`<div class="task-item" title="Click and hold to check the task">
                         <li>${inputNewTask.value}</li>
                         <div class="group-btn">
-                        <button id="edit-btn" title="Edit Task"><i class="far fa-edit"></i></button>
-                        <button id="del-btn" title="Remove Task"><i class="fas fa-trash"></i></button>
+                        <button id="edit-btn" title="Click to edit the task"><i class="far fa-edit"></i></button>
+                        <button id="del-btn" title="Click to remove the task"><i class="fas fa-trash"></i></button>
                         </div>                       
                         </div> `;
       taskList.appendChild(taskItem);
