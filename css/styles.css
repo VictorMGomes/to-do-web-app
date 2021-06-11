@@ -69,7 +69,7 @@ body{
     #list-content{    
         text-align: center;
     }
-    #list-content li{
+    #list-content span{
         font-size: large;
         font-style: oblique;
     }
