@@ -80,12 +80,12 @@ body{
         background-color: #fff;
         border: solid 2px rgba(0, 0, 0, 0.726);  
     }
-    #list-content #edit-btn:hover{
+    #list-content .edit-btn:hover{
         background-color: rgb(224, 224, 10);
         cursor: pointer;
         color: #fff;
     }
-    #list-content #del-btn:hover{
+    #list-content .del-btn:hover{
         background-color: rgb(185, 0, 0);
         cursor: pointer;
         color: #fff;

@@ -18,8 +18,8 @@ const taskItemStored = [];
       taskItem.innerHTML=`<div class="task-item" title="Click and hold to check the task"">
                         <span>${taskStoraged.name}</span>
                         <div class="group-btn">
-                        <button id="edit-btn" title="Click to edit the task" onclick="editTask(${taskStoraged.id})"><i class="far fa-edit"></i></button>
-                        <button id="del-btn" title="Click to remove the task" onclick="delTask(${taskStoraged.id})"><i class="fas fa-trash"></i></button>
+                        <button class="edit-btn" title="Click to edit the task" onclick="editTask(${taskStoraged.id})"><i class="far fa-edit"></i></button>
+                        <button class="del-btn" title="Click to remove the task" onclick="delTask(${taskStoraged.id})"><i class="fas fa-trash"></i></button>
                         </div>                       
                         </div>`;
       taskList.appendChild(taskItem);
@@ -28,18 +28,24 @@ const taskItemStored = [];
       console.table(taskItemStored);     
   }     
     }
-    //Function to remove task item
-    function delTask(taskid) {
-      let taskItem = document.getElementById(taskid);
-        if (taskItem) {
-          taskList.removeChild(taskItem);
-          let delItemStored = taskItemStored.indexOf(taskid);
-          console.log(delItemStored);
-          taskItemStored.splice(delItemStored, 1);          
-          console.table(taskItemStored);
-        };
-  
+ //Function to remove task item
+ function delTask(taskid) {
+  let taskItem = document.getElementById(taskid);
+    if (taskItem) {
+      taskList.removeChild(taskItem);
+      removeItem(taskItemStored, taskid);
+      console.table(taskItemStored);
     };
+
+};
+
+function removeItem(arrItems, value) {
+  for(let i = 0; i < arrItems.length; i++) {
+    if(arrItems[i].id === value ) {
+      arrItems.splice(i, 1);
+    }
+  }
+}
 
    //Listeners to create a new Task 
   btnNewTask.addEventListener("click", setNewTask);
