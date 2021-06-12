@@ -26,36 +26,48 @@ const taskItemStored = [];
       inputNewTask.value = "";
       taskItemStored.push(taskStoraged);
       console.table(taskItemStored);     
-  }     
-    }
+  };     
+    };
+
+//Function to search item Stored
+function searhTaskItemStored(arrItems, value) {
+  for (let index = 0; index < arrItems.length; index++) {
+    if(arrItems[index].id === value ) {
+      return index;
+    };    
+  };  
+}; 
+
  //Function to remove task item
  function delTask(taskid) {
   let taskItem = document.getElementById(taskid);
     if (taskItem) {
       taskList.removeChild(taskItem);
-      removeItem(taskItemStored, taskid);
-      console.table(taskItemStored);
+      let index = searhTaskItemStored(taskItemStored, taskid);
+      if (index) {
+        taskItemStored.splice(index, 1);                
+      };      
     };
-
+    console.table(taskItemStored);
 };
 
-function removeItem(arrItems, value) {
-  for(let i = 0; i < arrItems.length; i++) {
-    if(arrItems[i].id === value ) {
-      arrItems.splice(i, 1);
-    }
+//Function to edit task
+  function editTask(taskid) {
+    let taskItem = document.getElementById(taskid);
+    if (taskItem) {
+      alert(taskid);
+    };
+        
   }
-}
 
    //Listeners to create a new Task 
   btnNewTask.addEventListener("click", setNewTask);
   inputNewTask.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       setNewTask();
       inputNewTask.value = "";
-    }
+    };
 });
-
 
 
 
