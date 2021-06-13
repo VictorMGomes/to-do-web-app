@@ -4,7 +4,7 @@ let  btnNewTask = document.querySelector("#add-btn");
 let taskList = document.querySelector("#task-list");
 
 
-const taskItemStored = [];
+const taskItemStored = [0, ];
 
 //Function to create a new task
   function setNewTask() {
@@ -38,7 +38,34 @@ function searhTaskItemStored(arrItems, value) {
   };  
 }; 
 
- //Function to remove task item
+//Function to edit task
+function editTask(taskid) {
+  let taskItem = document.getElementById(taskid);
+    if (taskItem) {
+      let index = searhTaskItemStored(taskItemStored, taskid);
+      if (index) {
+      let newText = prompt("New Text? ");
+        if (newText != null && newText != 0) {
+          let taskStoraged = {
+            name: newText,
+            id: taskid
+          };
+          taskItem.innerHTML = `<div class="task-item" title="Click and hold to check the task"">
+        <span>${taskStoraged.name}</span>
+        <div class="group-btn">
+        <button class="edit-btn" title="Click to edit the task" onclick="editTask(${taskStoraged.id})"><i class="far fa-edit"></i></button>
+        <button class="del-btn" title="Click to remove the task" onclick="delTask(${taskStoraged.id})"><i class="fas fa-trash"></i></button>
+        </div>                       
+        </div>`;
+          taskItemStored.splice(index, 1);
+          taskItemStored.push(taskStoraged);             
+        };                     
+      };      
+    };
+    console.table(taskItemStored);
+};
+
+//Function to remove task item
  function delTask(taskid) {
   let taskItem = document.getElementById(taskid);
     if (taskItem) {
@@ -51,16 +78,7 @@ function searhTaskItemStored(arrItems, value) {
     console.table(taskItemStored);
 };
 
-//Function to edit task
-  function editTask(taskid) {
-    let taskItem = document.getElementById(taskid);
-    if (taskItem) {
-      alert(taskid);
-    };
-        
-  }
-
-   //Listeners to create a new Task 
+//Listeners to create a new Task 
   btnNewTask.addEventListener("click", setNewTask);
   inputNewTask.addEventListener('keypress', function (e) {
     if (e.key === "Enter") {
