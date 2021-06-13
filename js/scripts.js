@@ -8,7 +8,7 @@ const taskItemStored = [0, ];
 
 //Function to create a new task
   function setNewTask() {
-    if (!inputNewTask.value == "") {
+    if (inputNewTask.value != null && inputNewTask.value != 0) {
       let taskStoraged = {
         name: inputNewTask.value,
         id: Date.now()
@@ -26,7 +26,9 @@ const taskItemStored = [0, ];
       inputNewTask.value = "";
       taskItemStored.push(taskStoraged);
       console.table(taskItemStored);     
-  };     
+  } else {
+    inputNewTask.value = "";
+  }    
     };
 
 //Function to search item Stored
@@ -83,7 +85,6 @@ function editTask(taskid) {
   inputNewTask.addEventListener('keypress', function (e) {
     if (e.key === "Enter") {
       setNewTask();
-      inputNewTask.value = "";
     };
 });
 
