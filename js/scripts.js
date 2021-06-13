@@ -77,9 +77,10 @@ function editTask(taskid) {
     if (taskItem) {
       let index = searhTaskItemStored(taskItemStored, taskid);
       if (index) {
+        let taskStoraged = taskItemStored[index];
       let newText = prompt("New Text? ");
         if (newText != null && newText != 0) {
-          let taskStoraged = {
+          taskStoraged = {
             name: newText,
             id: taskid,
             tStatus: true
