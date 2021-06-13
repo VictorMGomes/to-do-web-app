@@ -11,11 +11,12 @@ const taskItemStored = [0, ];
     if (inputNewTask.value != null && inputNewTask.value != 0) {
       let taskStoraged = {
         name: inputNewTask.value,
-        id: Date.now()
+        id: Date.now(),
+        tStatus: true
       };
       let taskItem = document.createElement("li");
-      taskItem.setAttribute("id", `${taskStoraged.id}`)
-      taskItem.innerHTML=`<div class="task-item" title="Click and hold to check the task"">
+      taskItem.setAttribute("id", `${taskStoraged.id}`);
+      taskItem.innerHTML=`<div class="task-item" title="Double click to check the task"" ondblclick="checkTask(${taskStoraged.id})">
                         <span>${taskStoraged.name}</span>
                         <div class="group-btn">
                         <button class="edit-btn" title="Click to edit the task" onclick="editTask(${taskStoraged.id})"><i class="far fa-edit"></i></button>
@@ -40,6 +41,36 @@ function searhTaskItemStored(arrItems, value) {
   };  
 }; 
 
+//Function to check task item
+function checkTask(taskid) {  
+  let taskItem = document.getElementById(taskid);
+  if (taskItem) {
+    let index = searhTaskItemStored(taskItemStored, taskid);
+    if (index) {
+      let taskStoraged = taskItemStored[index];
+      if (taskStoraged.tStatus == true) {
+        taskItem.firstChild.style.textDecoration = "line-through";
+        taskItem.firstChild.style.backgroundColor = "rgb(136 126 13)";
+        taskItem.firstChild.style.color = "black";
+        taskStoraged.tStatus = false;
+        console.log(taskStoraged.tStatus)
+        taskItemStored.splice(index, 1); 
+        taskItemStored.push(taskStoraged);
+        console.table(taskItemStored);          
+      } else if (taskStoraged.tStatus == false){
+        taskItem.firstChild.style.textDecoration = "";
+        taskItem.firstChild.style.backgroundColor = "rgb(98 54 134)";
+        taskItem.firstChild.style.color = "white";
+        taskStoraged.tStatus = true;
+        console.log(taskStoraged.tStatus);
+        taskItemStored.splice(index, 1); 
+        taskItemStored.push(taskStoraged);
+        console.table(taskItemStored);
+      };          
+    };        
+  };
+};
+
 //Function to edit task
 function editTask(taskid) {
   let taskItem = document.getElementById(taskid);
@@ -50,9 +81,10 @@ function editTask(taskid) {
         if (newText != null && newText != 0) {
           let taskStoraged = {
             name: newText,
-            id: taskid
+            id: taskid,
+            tStatus: true
           };
-          taskItem.innerHTML = `<div class="task-item" title="Click and hold to check the task"">
+          taskItem.innerHTML = `<div class="task-item" title="Double click to check the task"" ondblclick="checkTask(${taskStoraged.id})">
         <span>${taskStoraged.name}</span>
         <div class="group-btn">
         <button class="edit-btn" title="Click to edit the task" onclick="editTask(${taskStoraged.id})"><i class="far fa-edit"></i></button>
@@ -87,9 +119,3 @@ function editTask(taskid) {
       setNewTask();
     };
 });
-
-
-
-
-
-
