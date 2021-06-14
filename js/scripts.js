@@ -58,7 +58,7 @@ function checkTask(taskid) {
         taskItemStored.push(taskStoraged);
         console.table(taskItemStored);          
       } else if (taskStoraged.tStatus == false){
-        taskItem.firstChild.style.textDecoration = "";
+        taskItem.firstChild.style.textDecoration = "none";
         taskItem.firstChild.style.backgroundColor = "rgb(98 54 134)";
         taskItem.firstChild.style.color = "white";
         taskStoraged.tStatus = true;

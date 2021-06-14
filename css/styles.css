@@ -101,8 +101,7 @@ body{
         padding: 10px;
     }
     .task-item:hover{
-        background-color: #7fce60;
-        border: solid 1px black;    
+        border: solid 1px #7fce60;    
     }
     .task-item li{
         width: 80%;
